@@ -54,17 +54,5 @@ router.put('/user/:id', async(req, res) => {
 })
 
 
-// Delete User by Id
-router.delete('/user/:id', async (req, res) => {
-    const { id } = req.params
-    const { success, data } = await deleteUserById(id)
-    if (success) {
-      return res.json({ success, data })
-    }
-    return res.status(500).json({ success: false, message: 'Error'})
-})
-  
-
-
 
 export default router
